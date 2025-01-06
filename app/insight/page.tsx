@@ -70,8 +70,8 @@ const Page = () => {
                     </select>
                     <button
                         onClick={handleSubmit}
-                        className={`w-full px-6 py-3 text-sm font-medium text-white rounded-lg transition-all duration-300 
-                            ${loading ? 'bg-gray-700' : 'bg-blue-600 hover:bg-blue-700'}`}
+                        className={`w-full px-4 py-2 text-lg font-medium text-white rounded-lg transition-all duration-300 
+                            ${loading ? 'bg-[linear-gradient(-145deg,_#FBCB50_0%,_#D87297_43%,_#E36658_100%)] opacity-70 ' : 'bg-[linear-gradient(-145deg,_#FBCB50_0%,_#D87297_43%,_#E36658_100%)] colorshadowbox3  '}`}
                         disabled={loading}
                     >
                         {loading ? 'Analyzing...' : 'Analyze'}
