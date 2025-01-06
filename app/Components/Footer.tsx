@@ -59,7 +59,7 @@ const Footer = () => {
                         </div>
                         <div className="flex flex-col">
                             <h1 className='text-lg font-semibold'>Prithviraj Daud</h1>
-                            <h1 className='text-sm text-white/80'>Frontend developer</h1>
+                            <h1 className='text-sm text-white/80'>UI/UX designer</h1>
                         </div>
                     </div>
                     <div className="border w-full h-full border-[#313131] flex px-10 gap-x-4 items-center">
@@ -74,7 +74,7 @@ const Footer = () => {
                         </div>
                         <div className="flex flex-col">
                             <h1 className='text-lg font-semibold'>Varad Puranik</h1>
-                            <h1 className='text-sm text-white/80'>UI/UX Designer & Developer</h1>
+                            <h1 className='text-sm text-white/80'>Frontend Developer</h1>
                         </div>
                     </div>
                 </div>

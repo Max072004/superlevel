@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const Page = () => {
     const [postType, setPostType] = useState('');
@@ -7,37 +8,40 @@ const Page = () => {
     const [response, setResponse] = useState('');
 
     const prompt = "I want to see insights for " + postType;
+    const langflow = process.env.NEXT_PUBLIC_API_LANGFLOW;
+
     const handleSubmit = async () => {
         setLoading(true);
         try {
-            const res = await fetch(
-                process.env.NEXT_PUBLIC_LANGFLOW,
+            const res = await axios.post(
+                langflow,
                 {
-                    method: "POST",
+                    input_value: prompt,
+                    output_type: "chat",
+                    input_type: "chat",
+                    tweaks: {
+                        "CSVtoData-WwByk": {},
+                        "Google Generative AI Embeddings-QPuSf": {},
+                        "AstraDB-KWpcz": {},
+                        "Prompt-S63n4": {},
+                        "ChatInput-YWsO0": {},
+                        "ChatOutput-Ifur5": {},
+                        "PythonCodeStructuredTool-TT3QD": {},
+                        "GroqModel-Kmenx": {
+                            "groq_api_key": process.env.NEXT_PUBLIC_GROQ_API_KEY,
+                        },
+                        "Agent-fJklG": {}
+                    }
+                },
+                {
                     headers: {
-                        "Authorization": "Bearer <TOKEN>",
+                        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_HF_TOKEN}`,
                         "Content-Type": "application/json",
                         "x-api-key": process.env.NEXT_PUBLIC_LANGFLOW_API,
                     },
-                    body: JSON.stringify({
-                        input_value: prompt,
-                        output_type: "chat",
-                        input_type: "chat",
-                        tweaks: {
-                            "CSVtoData-WiuMN": {},
-                            "Google Generative AI Embeddings-KRZMd": {},
-                            "AstraDB-jkZGl": {},
-                            "PythonCodeStructuredTool-Mutrz": {},
-                            "Prompt-vS0xb": {},
-                            "ChatInput-3L0Ul": {},
-                            "ChatOutput-zOiHu": {},
-                            "Agent-eVJXM": {},
-                        },
-                    }),
                 }
             );
-            const data = await res.json();
-            const text = data.outputs[0].outputs[0].results.message.text;
+            const text = res.data.outputs[0].outputs[0].results.message.text;
             setResponse(text);
         } catch (error) {
             console.error('Error:', error);
@@ -71,7 +75,7 @@ const Page = () => {
                     <button
                         onClick={handleSubmit}
                         className={`w-full px-4 py-2 text-lg font-medium text-white rounded-lg transition-all duration-300 
-                            ${loading ? 'bg-[linear-gradient(-145deg,_#FBCB50_0%,_#D87297_43%,_#E36658_100%)] opacity-70 ' : 'bg-[linear-gradient(-145deg,_#FBCB50_0%,_#D87297_43%,_#E36658_100%)] colorshadowbox3  '}`}
+                            ${loading ? 'bg-[linear-gradient(-145deg,_#FBCB50_0%,_#D87297_43%,_#E36658_100%)] opacity-70 ' : 'bg-[linear-gradient(-145deg,_#FBCB50_0%,_#D87297_43%,_#E36658_100%)] colorshadowbox3'}`}
                         disabled={loading}
                     >
                         {loading ? 'Analyzing...' : 'Analyze'}
