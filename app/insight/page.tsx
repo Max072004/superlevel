@@ -7,7 +7,7 @@ const Page = () => {
     const [loading, setLoading] = useState(false);
     const [response, setResponse] = useState('');
 
-    const prompt = "I want to see insights for " + postType;
+    const prompt = "Analyze " + postType;
     const langflow = process.env.NEXT_PUBLIC_API_LANGFLOW ?? '';
 
     const handleSubmit = async () => {
