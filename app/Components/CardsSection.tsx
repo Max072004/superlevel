@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
