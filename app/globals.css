@@ -26,6 +26,17 @@
     /* [text-shadow:_0px_0px_24px_#d87297] */
 }
 
+
+.colorshadowbox3{
+    box-shadow: 0px 0px 8px 0px#d87297;
+    /* [text-shadow:_0px_0px_24px_#d87297] */
+}
+
+.colorshadowbox3:hover{
+    box-shadow: 0px 0px 24px 0px#d87297;
+    /* [text-shadow:_0px_0px_24px_#d87297] */
+}
+
 @layer base {
   :root {
         --background: 0 0% 100%;
