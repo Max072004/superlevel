@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const denton = localFont ({
+  src:[
+    {
+      path:"../public/fonts/Denton-Test-Bold-700.ttf"
+    },
+  ],
+  variable:"--font-denton",
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${denton.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
