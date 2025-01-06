@@ -1,5 +1,7 @@
 import Navbar from './Navbar'
 import Image from 'next/image'
+import Link from "next/link";
+
 
 const Hero = () => {
   return (
@@ -27,10 +29,10 @@ const Hero = () => {
           </div>
 
           <div id="Ctas" className=" flex gap-8  mb-[24px]">
-            <div className="capitalize border flex gap-2 border-[#333] bg-[#212121] tracking-tight lg:text-base text-sm font-semibold lg:px-4 px-2.5 lg:py-2 py-1.5 ">
+            <Link href="/insight" className="capitalize border flex gap-2 border-[#333] bg-[#212121] tracking-tight lg:text-base text-sm font-semibold lg:px-4 px-2.5 lg:py-2 py-1.5 ">
               <p className="">see insights</p>
               <Image src="/assets/analytics.svg" alt="Insights" width={20} height={20} />
-            </div>
+            </Link>
             <div className="capitalize flex gap-2 tracking-tight lg:text-base text-sm font-semibold lg:px-4 px-2.5 lg:py-2 py-1.5 ">
               <p className="">Watch Video</p>
               <Image src="/assets/rightarrow.svg" alt="Insights" width={20} height={20} />
