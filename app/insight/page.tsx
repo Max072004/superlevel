@@ -11,7 +11,7 @@ const Page = () => {
         setLoading(true);
         try {
             const res = await fetch(
-                "http://localhost:7860/api/v1/run/97bb7736-a133-4481-ba67-55084b99919f?stream=false",
+                process.env.NEXT_PUBLIC_LANGFLOW,
                 {
                     method: "POST",
                     headers: {
