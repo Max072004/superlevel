@@ -34,13 +34,13 @@ const Hero = () => {
               <Image src="/assets/analytics.svg" alt="Insights" width={20} height={20} />
             </Link>
             <div className="capitalize flex gap-2 tracking-tight lg:text-base text-sm font-semibold hover:border-[#313131] border border-[#161616] transition ease-in-out duration-300 cursor-pointer lg:px-4 px-2.5 lg:py-2 py-1.5 ">
-              <p className="">Watch Video</p>
+              <a href='#videoo' className="">Watch Video</a>
               <Image src="/assets/rightarrow.svg" alt="Insights" width={20} height={20} />
             </div>
           </div>
 
           <div id="video" className="bg-[#313131]/60 lg:w-[70dvw] w-[90dvw] lg:h-[80dvh] h-[40dvh] lg:mt-[52px] mt-[36px] rounded-3xl backdrop-blur-md flex justify-center items-center">
-          <iframe width="560" height="315" className='w-[95%] h-[90%] rounded-2xl ' src="https://www.youtube.com/embed/YtIvbDrF8zw?si=UQdN7LzSeLAxPSH1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>         
+             <iframe id='videoo' width="560" height="315" className='w-[95%] h-[90%] rounded-2xl ' src="https://www.youtube.com/embed/YtIvbDrF8zw?si=UQdN7LzSeLAxPSH1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>         
           </div>
 
         </div>

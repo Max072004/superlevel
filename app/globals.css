@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 .bggrad{
     background: linear-gradient(-106.193deg, #131313 0%, #19191A 68%, #131313 100%), linear-gradient(#000000, #000000);
 }
